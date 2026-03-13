@@ -14,21 +14,21 @@ except ImportError:
 PT_PATH = Path(
     "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning.pt"
 )
-RESPONSE_KEY = "response_0"
+RESPONSE_KEY = "response_2"
 OUTPUT_2D_PATH = Path(
-    "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_response_0_steps_2d.png"
+    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_steps_2d.png"
 )
 OUTPUT_1D_PATH = Path(
-    "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_response_0_steps_component_1.png"
+    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_steps_component_1.png"
 )
 OUTPUT_3D_PATH = Path(
-    "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_response_0_steps_3d.png"
+    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_steps_3d.png"
 )
 OUTPUT_3D_PATH_PLANE = Path(
-    "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_response_0_steps_3d_plane.png"
+    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_steps_3d_plane.png"
 )
 OUTPUT_SPECTROGRAM_PATH = Path(
-    "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_response_0_spectrogram.png"
+    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_spectrogram.png"
 )
 
 
