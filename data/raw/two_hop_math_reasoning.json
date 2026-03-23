@@ -8,7 +8,7 @@
     {
       "id": 1,
       "question": "A store sells apples for $2 each. Sarah buys 5 apples and pays with a $20 bill. How much change does she receive?",
-      "hop_1": {"description": "Compute total cost", "computation": "5 × $2 = $10"},
+      "hop_1": {"description": "How much does Sarah pay in total for 5 apples at $2 each?", "computation": "5 × $2 = $10"},
       "hop_2": {"description": "Compute change", "computation": "$20 − $10 = $10"},
       "answer": "$10",
       "category": "money"
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "question": "A car travels at 60 mph for 2 hours, then at 40 mph for 3 hours. What is the total distance traveled?",
-      "hop_1": {"description": "Compute each segment's distance", "computation": "60 × 2 = 120 miles; 40 × 3 = 120 miles"},
+      "hop_1": {"description": "How far does the car travel in each individual segment?", "computation": "60 × 2 = 120 miles; 40 × 3 = 120 miles"},
       "hop_2": {"description": "Sum the distances", "computation": "120 + 120 = 240 miles"},
       "answer": "240 miles",
       "category": "distance"
@@ -24,7 +24,7 @@
     {
       "id": 3,
       "question": "A rectangle has length 8 cm and width 5 cm. If both dimensions are doubled, what is the area of the new rectangle?",
-      "hop_1": {"description": "Compute new dimensions", "computation": "length = 2 × 8 = 16 cm; width = 2 × 5 = 10 cm"},
+      "hop_1": {"description": "What are the new length and width after doubling each dimension?", "computation": "length = 2 × 8 = 16 cm; width = 2 × 5 = 10 cm"},
       "hop_2": {"description": "Compute new area", "computation": "16 × 10 = 160 cm²"},
       "answer": "160 cm²",
       "category": "geometry"
@@ -32,7 +32,7 @@
     {
       "id": 4,
       "question": "A bookstore has 3 shelves, each holding 12 books. After selling 15 books, how many books remain?",
-      "hop_1": {"description": "Compute total books", "computation": "3 × 12 = 36 books"},
+      "hop_1": {"description": "How many books are on all 3 shelves combined?", "computation": "3 × 12 = 36 books"},
       "hop_2": {"description": "Subtract books sold", "computation": "36 − 15 = 21 books"},
       "answer": "21 books",
       "category": "counting"
@@ -40,7 +40,7 @@
     {
       "id": 5,
       "question": "Tom earns $15 per hour and works 8 hours a day. If he saves 30% of his daily earnings, how much does he save per day?",
-      "hop_1": {"description": "Compute daily earnings", "computation": "$15 × 8 = $120"},
+      "hop_1": {"description": "How much does Tom earn in one full day of work?", "computation": "$15 × 8 = $120"},
       "hop_2": {"description": "Compute savings", "computation": "$120 × 0.30 = $36"},
       "answer": "$36",
       "category": "percentages"
@@ -48,7 +48,7 @@
     {
       "id": 6,
       "question": "A pizza is cut into 8 equal slices. Three people each eat 2 slices. What fraction of the pizza remains?",
-      "hop_1": {"description": "Compute slices eaten", "computation": "3 × 2 = 6 slices eaten"},
+      "hop_1": {"description": "How many slices do the three people eat in total?", "computation": "3 × 2 = 6 slices eaten"},
       "hop_2": {"description": "Compute remaining fraction", "computation": "(8 − 6) / 8 = 2/8 = 1/4"},
       "answer": "1/4",
       "category": "fractions"
@@ -56,7 +56,7 @@
     {
       "id": 7,
       "question": "Train A leaves a station at 9:00 AM at 80 km/h. Train B leaves the same station at 10:00 AM at 100 km/h in the same direction. At what time does Train B catch Train A?",
-      "hop_1": {"description": "Compute Train A's head start distance", "computation": "80 km/h × 1 h = 80 km"},
+      "hop_1": {"description": "How far ahead is Train A when Train B departs at 10:00 AM?", "computation": "80 km/h × 1 h = 80 km"},
       "hop_2": {"description": "Compute catch-up time using relative speed", "computation": "80 km ÷ (100 − 80) km/h = 4 h after 10:00 AM = 2:00 PM"},
       "answer": "2:00 PM",
       "category": "relative_motion"
@@ -64,7 +64,7 @@
     {
       "id": 8,
       "question": "A school has 240 students. 40% are in grade 6, and half of the grade 6 students participate in sports. How many grade 6 students participate in sports?",
-      "hop_1": {"description": "Compute number of grade 6 students", "computation": "240 × 0.40 = 96 students"},
+      "hop_1": {"description": "How many of the 240 students are in grade 6?", "computation": "240 × 0.40 = 96 students"},
       "hop_2": {"description": "Compute sports participants", "computation": "96 ÷ 2 = 48 students"},
       "answer": "48 students",
       "category": "percentages"
@@ -72,7 +72,7 @@
     {
       "id": 9,
       "question": "A tank holds 500 liters and is currently 60% full. After adding 50 liters, what percentage of the tank is filled?",
-      "hop_1": {"description": "Compute current volume then add", "computation": "500 × 0.60 = 300 L; 300 + 50 = 350 L"},
+      "hop_1": {"description": "How many liters are in the tank after adding 50 liters to the current amount?", "computation": "500 × 0.60 = 300 L; 300 + 50 = 350 L"},
       "hop_2": {"description": "Compute new fill percentage", "computation": "350 ÷ 500 = 0.70 = 70%"},
       "answer": "70%",
       "category": "percentages"
@@ -80,7 +80,7 @@
     {
       "id": 10,
       "question": "A worker produces 45 items per hour. After a 20% efficiency improvement, how many items does the worker produce in an 8-hour shift?",
-      "hop_1": {"description": "Compute new hourly rate", "computation": "45 × 1.20 = 54 items/hour"},
+      "hop_1": {"description": "What is the worker's new hourly production rate after the 20% efficiency improvement?", "computation": "45 × 1.20 = 54 items/hour"},
       "hop_2": {"description": "Compute total items in shift", "computation": "54 × 8 = 432 items"},
       "answer": "432 items",
       "category": "rates"
