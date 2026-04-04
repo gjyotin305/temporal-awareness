@@ -1,4 +1,5 @@
 from pathlib import Path
+import argparse
 
 import matplotlib.pyplot as plt
 import torch
@@ -9,11 +10,8 @@ MODEL_NAME = "unsloth/Qwen2.5-3B-Instruct"
 PT_PATH = Path(
     "/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning.pt"
 )
-RESPONSE_KEY = "response_0"
+RESPONSE_KEYS = ("response_0", "response_1", "response_2")
 TOP_K = 10
-OUTPUT_PATH = Path(
-    f"/data/b22ai063/.mech_interp/temporal-awareness/results/1_math_reasoning_{RESPONSE_KEY}_token_prob_diagnostics_top_{TOP_K}.png"
-)
 
 
 def collect_step_logits(logits_by_step: dict) -> tuple[list[int], torch.Tensor]:
@@ -123,26 +121,84 @@ def plot_token_prob_diagnostics(
     plt.close(fig)
 
 
-def main(
-    pt_path: Path = PT_PATH,
-    response_key: str = RESPONSE_KEY,
-    model_name: str = MODEL_NAME,
-    top_k: int = TOP_K,
-    output_path: Path = OUTPUT_PATH,
+def build_output_path(pt_path: Path, response_key: str, top_k: int) -> Path:
+    return pt_path.with_name(
+        f"{pt_path.stem}_{response_key}_token_prob_diagnostics_top_{top_k}.png"
+    )
+
+
+def plot_response(
+    response: dict,
+    response_key: str,
+    tokenizer: AutoTokenizer,
+    output_path: Path,
+    top_k: int,
 ) -> None:
-    obj = torch.load(pt_path, map_location="cpu")
-    response = obj[response_key]
     logits_by_step = response["activations"]
 
     step_ids, step_logits = collect_step_logits(logits_by_step)
     step_probs = torch.softmax(step_logits, dim=-1)
     token_ids = select_top_k_token_ids(step_probs, top_k=top_k)
-
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
     plot_token_prob_diagnostics(step_ids, step_probs, token_ids, tokenizer, output_path)
 
-    print(f"Saved token-probability plot to {output_path}")
+    print(f"Saved {response_key} token-probability plot to {output_path}")
+
+
+def visualize_pt_file(
+    pt_path: Path,
+    model_name: str = MODEL_NAME,
+    top_k: int = TOP_K,
+    response_keys: tuple[str, ...] = RESPONSE_KEYS,
+) -> list[Path]:
+    obj = torch.load(pt_path, map_location="cpu")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    saved_paths = []
+
+    for response_key in response_keys:
+        if response_key not in obj:
+            print(f"Skipping {response_key} for {pt_path.name}: key not found")
+            continue
+        output_path = build_output_path(pt_path, response_key, top_k)
+        plot_response(
+            response=obj[response_key],
+            response_key=response_key,
+            tokenizer=tokenizer,
+            output_path=output_path,
+            top_k=top_k,
+        )
+        saved_paths.append(output_path)
+
+    return saved_paths
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Visualize next-token probability diagnostics for all responses in a .pt result file."
+    )
+    parser.add_argument(
+        "--pt-path",
+        type=Path,
+        default=PT_PATH,
+        help="Path to a saved *_math_reasoning.pt file.",
+    )
+    parser.add_argument(
+        "--model-name",
+        default=MODEL_NAME,
+        help="Tokenizer model name used to decode token labels.",
+    )
+    parser.add_argument(
+        "--top-k",
+        type=int,
+        default=TOP_K,
+        help="How many salient tokens to plot.",
+    )
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    visualize_pt_file(
+        pt_path=args.pt_path,
+        model_name=args.model_name,
+        top_k=args.top_k,
+    )

@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 import torch
+from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
@@ -296,7 +297,8 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained('unsloth/Qwen2.5-3B-Instruct')
 
     data_points = data['questions']
-    get_logits_across_all_tokens(model, tokenizer, data_points[0])
+    for point in tqdm(data_points, desc='Computing Datapoints'):
+        get_logits_across_all_tokens(model, tokenizer, point)
     # get_activations_across_all_tokens(model, tokenizer, data_points[0])
     # tokenized_messages = tokenizer.apply_chat_template(
     #     messages,
