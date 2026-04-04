@@ -18,6 +18,43 @@ def get_data():
         data = json.load(f)
     return data
 
+def generate_with_logit_cached(ids, model, tokenizer, max_tokens=200, temperature=0):
+    generated_tokens = []
+    out = {}
+
+    eos_token_id = tokenizer.eos_token_id
+    past_key_values = None
+    current_ids = ids
+
+    with torch.inference_mode():
+        for idx, _ in enumerate(range(max_tokens)):
+            outputs = model.forward(
+                current_ids,
+                use_cache=True,
+                past_key_values=past_key_values,
+            )
+            past_key_values = outputs.past_key_values
+
+            # Cache only the next-token distribution instead of full-sequence logits.
+            next_token_logits = outputs.logits[:, -1, :]
+            out[idx] = next_token_logits.detach().cpu()
+
+            if temperature > 0:
+                next_token_logits = next_token_logits / temperature
+                probs = torch.nn.functional.softmax(next_token_logits, dim=-1)
+                next_ids = torch.multinomial(probs, num_samples=1)
+            else:
+                next_ids = torch.argmax(next_token_logits, dim=-1, keepdim=True)
+
+            token = next_ids.item()
+            if token == eos_token_id:
+                break
+
+            generated_tokens.append(token)
+            current_ids = next_ids
+
+    print(tokenizer.decode(generated_tokens))
+    return generated_tokens, out
 
 def generate_with_forward_cached(ids, model, tokenizer, max_tokens=200, temperature=0):
     generated_tokens = []
@@ -157,6 +194,97 @@ def get_activations_across_all_tokens(
     torch.save(output, output_path)
     return output_path
 
+def get_logits_across_all_tokens(
+    model,
+    tokenizer,
+    data_point,
+    output_path: str | Path | None = None,
+):
+    output = {'data_point': data_point}
+
+    messages = [
+        {"role": "system", "content": SYS_PROMPT},
+        {"role": "user", "content": data_point.get("question")},
+    ]
+    tokenized_messages = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        return_tensors="pt",
+        add_generation_prompt=True,
+    )
+    
+    answer, act = generate_with_logit_cached(
+        tokenized_messages.to(model.device), model=model, tokenizer=tokenizer
+    )
+    del tokenized_messages
+
+    output["response_0"] = {
+        "answer_token_ids": answer,
+        "answer_text": tokenizer.decode(answer),
+        "activations": act,
+    }
+    str_answer = tokenizer.decode(answer)
+
+    messages = [
+        {"role": "system", "content": SYS_PROMPT},
+        {"role": "user", "content": data_point.get("question")},
+        {"role": "assistant", "content": str_answer},
+        {"role": "user", "content": data_point.get("hop_1")['description']},
+    ]
+    tokenized_messages = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        return_tensors="pt",
+        add_generation_prompt=True,
+    )
+
+    answer, act = generate_with_logit_cached(
+        tokenized_messages.to(model.device), model=model, tokenizer=tokenizer
+    )
+    del tokenized_messages
+    
+    output["response_1"] = {
+        "answer_token_ids": answer,
+        "answer_text": tokenizer.decode(answer),
+        "activations": act,
+    }
+    str_answer_1 = tokenizer.decode(answer)
+
+    messages = [
+        {"role": "system", "content": SYS_PROMPT},
+        {"role": "user", "content": data_point.get("question")},
+        {"role": "assistant", "content": str_answer},
+        {"role": "user", "content": data_point.get("hop_1")['description']},
+        {"role": "assistant", "content": str_answer_1},  
+        {"role": "user", "content": data_point.get("hop_2")['description']},
+    ]
+    tokenized_messages = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        return_tensors="pt",
+        add_generation_prompt=True,
+    )
+    answer, act = generate_with_logit_cached(
+        tokenized_messages.to(model.device), model=model, tokenizer=tokenizer
+    )
+    del tokenized_messages
+    
+    output["response_2"] = {
+        "answer_token_ids": answer,
+        "answer_text": tokenizer.decode(answer),
+        "activations": act,
+    }
+
+    if output_path is None:
+        stem = data_point.get("id")
+        output_path = Path("results") / f"{stem}_math_reasoning.pt"
+    else:
+        output_path = Path(output_path)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    torch.save(output, output_path)
+    return output_path
+
 if __name__ == "__main__":
     #check
     # messages = [
@@ -168,7 +296,8 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained('unsloth/Qwen2.5-3B-Instruct')
 
     data_points = data['questions']
-    get_activations_across_all_tokens(model, tokenizer, data_points[0])
+    get_logits_across_all_tokens(model, tokenizer, data_points[0])
+    # get_activations_across_all_tokens(model, tokenizer, data_points[0])
     # tokenized_messages = tokenizer.apply_chat_template(
     #     messages,
     #     tokenize=True,
