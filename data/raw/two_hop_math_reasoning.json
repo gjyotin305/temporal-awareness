@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "Two-hop math reasoning questions requiring an intermediate computation step before reaching the final answer",
-    "n_questions": 10,
+    "n_questions": 12,
     "format": "Each question requires exactly two reasoning hops: (1) derive an intermediate value, (2) use it to compute the final answer"
   },
   "questions": [
@@ -84,6 +84,22 @@
       "hop_2": {"description": "Compute total items in shift", "computation": "54 × 8 = 432 items"},
       "answer": "432 items",
       "category": "rates"
+    },
+    {
+      "id": 11,
+      "question": "A 120-liter solution is 25% salt. If 30 liters of water evaporate and no salt is lost, what percentage of the remaining solution is salt?",
+      "hop_1": {"description": "How many liters of salt are in the solution before evaporation?", "computation": "120 × 0.25 = 30 liters of salt"},
+      "hop_2": {"description": "Compute the new salt percentage after 30 liters of water evaporate", "computation": "Remaining solution = 120 − 30 = 90 liters; salt percentage = 30 ÷ 90 = 1/3 = 33 1/3%"},
+      "answer": "33 1/3%",
+      "category": "mixtures"
+    },
+    {
+      "id": 12,
+      "question": "A contractor buys 250 tiles. During installation, 12% of the tiles break. Of the remaining tiles, 3/5 are used for the kitchen, and the rest are split equally between two bathrooms. How many tiles go into each bathroom?",
+      "hop_1": {"description": "How many tiles remain after 12% break, and how many are left after using 3/5 of those remaining tiles for the kitchen?", "computation": "Broken tiles = 250 × 0.12 = 30; remaining after breakage = 250 − 30 = 220; kitchen uses 220 × 3/5 = 132; tiles left for bathrooms = 220 − 132 = 88"},
+      "hop_2": {"description": "Split the remaining tiles equally between the two bathrooms", "computation": "88 ÷ 2 = 44 tiles per bathroom"},
+      "answer": "44 tiles",
+      "category": "multi_step_allocation"
     }
   ]
 }

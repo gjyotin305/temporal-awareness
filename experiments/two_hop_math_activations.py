@@ -19,7 +19,7 @@ def get_data():
         data = json.load(f)
     return data
 
-def generate_with_logit_cached(ids, model, tokenizer, max_tokens=200, temperature=0):
+def generate_with_logit_cached(ids, model, tokenizer, max_tokens=1000, temperature=0):
     generated_tokens = []
     out = {}
 
@@ -57,7 +57,7 @@ def generate_with_logit_cached(ids, model, tokenizer, max_tokens=200, temperatur
     print(tokenizer.decode(generated_tokens))
     return generated_tokens, out
 
-def generate_with_forward_cached(ids, model, tokenizer, max_tokens=200, temperature=0):
+def generate_with_forward_cached(ids, model, tokenizer, max_tokens=1000, temperature=0):
     generated_tokens = []
     out = {}
     
