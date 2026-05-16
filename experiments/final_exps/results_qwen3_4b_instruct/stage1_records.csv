@@ -1,0 +1,698 @@
+base_id,condition,label,hop_depth,error_type,peak_entropy,mean_entropy,early_entropy,min_confidence,mean_vocab_gap,logprob_uncertainty,hedged,hedge_count,overconfident,overconf_count,verbalized_conf,is_absurd,final_correct_clean,final_correct_error,final_degraded,prompt_len,n_tokens_gen,generated_text
+planning_budget_0002,clean,0,4,,,,,0.57763671875,0.9502205577763644,0.03232819165802205,False,0,False,0,,False,False,False,False,125,22,"The HR department requested 250, but the maximum limit per department is 200.  
+
+"
+planning_budget_0002,error_standard,1,4,constraint_violation,,,,0.57763671875,0.9502205577763644,0.03232819165802205,False,0,False,0,,False,False,False,False,125,22,"The HR department requested 250, but the maximum limit per department is 200.  
+
+"
+planning_budget_0002,error_verbalized,1,4,constraint_violation,,,,0.9150390625,0.991443410001952,0.004979699811678121,False,0,False,0,,False,False,False,False,190,29,"HR requested 250, but the maximum per department is 200. Therefore, only 200 can be allocated.
+
+"
+2hop_fractions_0039,clean,0,2,,,,,0.465576171875,0.8133585731188456,0.15240588466847338,False,0,False,0,,False,False,False,False,106,15,"Step 2: The total number of slices is 16.  
+"
+2hop_fractions_0039,error_standard,1,2,wrong_percentage_base,,,,0.478759765625,0.7739504973093668,0.16126627590896747,False,0,False,0,,False,False,False,False,108,9,"We started with 16 equal slices.
+
+"
+2hop_fractions_0039,error_verbalized,1,2,wrong_percentage_base,,,,0.470947265625,0.7969863670212882,0.1674275662232356,False,0,False,0,,False,False,False,False,173,7,"Total slices = 16  
+"
+2hop_fractions_0032,clean,0,2,,,,,0.389892578125,0.8174498043954372,0.1593626218190385,False,0,False,0,,False,True,True,False,103,16,"Step 2: The pizza was cut into 10 equal slices.  
+"
+2hop_fractions_0032,error_standard,1,2,wrong_unit,,,,0.384033203125,0.6679755611853166,0.2503444375277383,False,0,False,0,,False,True,True,False,105,11,"We started with 10 equal slices of pizza.
+
+"
+2hop_fractions_0032,error_verbalized,1,2,wrong_unit,,,,0.47314453125,0.8273523092269898,0.12319254882020995,False,0,False,0,,False,True,True,False,170,10,"There are 10 slices in total.  
+"
+3hop_multi_stage_geometry_0006,clean,0,3,,,,,0.7548828125,0.9652592028890338,0.019339674355546177,False,0,False,0,,False,False,False,False,129,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0006,error_standard,1,3,wrong_operator,,,,0.8740234375,0.9756896694501241,0.012987117807355706,False,0,False,0,,False,False,False,False,127,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0006,error_verbalized,1,3,wrong_operator,,,,0.9853515625,0.9976986675035386,0.001169285597270161,False,0,False,0,,False,False,False,False,192,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+4hop_multi_stage_allocation_0017,clean,0,4,,,,,0.83837890625,0.9526693065961201,0.025462051754650758,False,0,False,0,,False,False,True,False,142,15,"After spending 25% on salaries, $750 remains.
+
+"
+4hop_multi_stage_allocation_0017,error_standard,1,4,wrong_unit,,,,0.65380859375,0.9385131852967399,0.03746592731663819,False,0,False,0,,False,False,True,False,141,14,"After spending 25% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0017,error_verbalized,1,4,wrong_unit,,,,0.53125,0.8724587048803057,0.07977941316407802,False,0,False,0,,False,False,True,False,206,14,"After spending 25% on salaries, the remaining budget is:
+
+"
+3hop_compound_rate_0007,clean,0,3,,,,,0.896484375,0.9702380100886027,0.01575767112947006,False,0,False,0,,False,False,False,False,151,9,"To find how long the second leg takes:
+
+"
+3hop_compound_rate_0007,error_standard,1,3,wrong_unit,,,,0.53125,0.8264558613300323,0.11281381445957264,False,0,False,0,,False,False,False,False,142,10,"To find how many minutes the second leg takes:
+
+"
+3hop_compound_rate_0007,error_verbalized,1,3,wrong_unit,,,,0.60302734375,0.8828949795828925,0.0719277209862209,False,0,False,0,,False,False,False,False,207,9,"To find how long the second leg takes:
+
+"
+2hop_fractions_0005,clean,0,2,,,,,0.5693359375,0.8940448620740105,0.07757055584849429,False,0,False,0,,False,False,False,False,106,17,"Step 2: The flatbread was cut into 16 equal slices.  
+"
+2hop_fractions_0005,error_standard,1,2,off_by_one,,,,0.69482421875,0.9499558596050038,0.036889942357114014,False,0,False,0,,False,False,False,False,106,17,"Step 2: What fraction of the flatbread's 16 slices remains?
+
+"
+2hop_fractions_0005,error_verbalized,1,2,off_by_one,,,,0.88134765625,0.9466688973563058,0.03249154128261686,False,0,False,0,,False,False,False,False,171,7,"Total slices: 16  
+"
+4hop_nested_fractions_0019,clean,0,4,,,,,0.53076171875,0.8518399000167847,0.09291879990694893,False,0,False,0,,False,True,True,False,147,30,"We take the number that passed quality control (1600) and multiply by 2/3 to find the number of premium quality widgets.
+
+"
+4hop_nested_fractions_0019,error_standard,1,4,wrong_percentage_base,,,,0.5078125,0.835456201008388,0.10485526386925602,False,0,False,0,,False,True,True,False,149,14,"We already found that 1600 widgets pass quality control.
+
+"
+4hop_nested_fractions_0019,error_verbalized,1,4,wrong_percentage_base,,,,0.64404296875,0.8822112046182156,0.0791691062085182,False,0,False,0,,False,True,True,False,214,16,"We already found that 16000 widgets pass quality control.  
+"
+2hop_rate_distance_0038,clean,0,2,,,,,0.615234375,0.9432928306715829,0.03557236743584845,False,0,False,0,,False,False,False,False,105,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0038,error_standard,1,2,magnitude_error,,,,0.67236328125,0.9464720785617828,0.03183489087791569,False,0,False,0,,False,False,False,False,107,14,"Step 2: Convert the travel time from hours to minutes.  
+
+"
+2hop_rate_distance_0038,error_verbalized,1,2,magnitude_error,,,,0.607421875,0.9125202532325473,0.053727723884337435,False,0,False,0,,False,False,False,False,172,28,"We know the trip takes 3 hours (since 120 km ÷ 40 km/h = 3 hours).  
+"
+3hop_percentage_chain_0047,clean,0,3,,,,,0.515625,0.8798049754566617,0.07516989893831688,False,0,False,0,,False,True,True,False,140,18,"Answer: 15% sales tax on $105 is calculated as:  
+"
+3hop_percentage_chain_0047,error_standard,1,3,wrong_unit,,,,0.44970703125,0.9132787883281708,0.0630426917030262,False,0,False,0,,False,True,True,False,128,36,"The discounted price is $150 − (30% of $150) = $150 − $45 = **$105**.
+
+"
+3hop_percentage_chain_0047,error_verbalized,1,3,wrong_unit,,,,0.7177734375,0.9698856876176947,0.018545099175643412,False,0,False,0,,True,True,True,False,193,34,"The discounted price is $150 - (30% of $150) = $150 - $45 = $105.
+
+"
+3hop_compound_rate_0018,clean,0,3,,,,,0.5537109375,0.9580542743206024,0.02959741097124891,False,0,False,0,,False,False,False,False,154,30,"Answer: 30 ÷ 30 = 1 hour = 60 minutes. The second leg takes 60 minutes.  
+
+"
+3hop_compound_rate_0018,error_standard,1,3,magnitude_error,,,,0.546875,0.8792130880885654,0.07754823100267065,False,0,False,0,,False,False,False,False,148,9,"To find how long the second leg takes:
+
+"
+3hop_compound_rate_0018,error_verbalized,1,3,magnitude_error,,,,0.267578125,0.8490382007190159,0.19828091879121243,False,0,False,0,,False,False,False,False,213,7,"Time = Distance ÷ Speed  
+"
+3hop_percentage_chain_0015,clean,0,3,,,,,0.673828125,0.9530085868695203,0.027419321519792247,False,0,False,0,,False,True,True,False,141,34,"Answer: 10% of $37.50 = $37.50 × 0.10 = $3.75.  
+
+"
+3hop_percentage_chain_0015,error_standard,1,3,off_by_one,,,,0.556640625,0.92889404296875,0.049520314029833624,False,0,False,0,,False,True,True,False,128,19,"Step 2: How much is the 10% sales tax on the discounted price?
+
+"
+3hop_percentage_chain_0015,error_verbalized,1,3,off_by_one,,,,0.55712890625,0.958223788274659,0.026186144261764813,False,0,False,0,,False,True,True,False,193,36,"The discounted price is $50 − (25% of $50) = $50 − $12.50 = $37.50.
+
+"
+3hop_percentage_chain_0004,clean,0,3,,,,,0.78271484375,0.9622495293617248,0.020985852152180604,False,0,False,0,,False,True,True,False,144,40,"Answer: 10% sales tax on $170 = $170 × 10% = $170 × 0.10 = $17.  
+
+"
+3hop_percentage_chain_0004,error_standard,1,3,wrong_percentage_base,,,,0.8701171875,0.9827696147717928,0.009742814668650764,False,0,False,0,,False,True,True,False,134,19,"Step 2: How much is the 10% sales tax on the discounted price?
+
+"
+3hop_percentage_chain_0004,error_verbalized,1,3,wrong_percentage_base,,,,0.46630859375,0.9465070378546622,0.038202801180906326,False,0,False,0,,True,True,True,False,199,51,"The discounted price is $170 (since 15% off $200: $200 × (1 - 0.15) = $200 × 0.85 = $170).
+
+"
+4hop_nested_fractions_0015,clean,0,4,,,,,0.499267578125,0.9010261930525303,0.06394570543491937,False,0,False,0,,False,True,True,False,147,32,"We take the number of widgets that pass quality control, which is 3750, and find 1/2 of them that are premium quality.
+
+"
+4hop_nested_fractions_0015,error_standard,1,4,off_by_one,,,,0.403564453125,0.836101981309744,0.11925738700597296,False,0,False,0,,False,True,True,False,147,39,"We take the number of widgets that pass quality control, which is 3750 (from Step 1), and find 1/2 of them to get the premium quality widgets.
+
+"
+4hop_nested_fractions_0015,error_verbalized,1,4,off_by_one,,,,0.41796875,0.9147747438400984,0.06365482998223142,False,0,False,0,,False,True,True,False,212,32,"We already found that 3750 widgets pass quality control (since 5000 × 3/4 = 3750).
+
+"
+2hop_fractions_0003,clean,0,2,,,,,0.61376953125,0.8725893460214138,0.08879485671203173,False,0,False,0,,False,False,False,False,103,16,"Step 2: The tart was cut into 20 equal slices.  
+"
+2hop_fractions_0003,error_standard,1,2,magnitude_error,,,,0.33740234375,0.872459203004837,0.1078166446565083,False,0,False,0,,False,False,False,False,105,16,"Step 2: The tart was cut into 20 equal slices.  
+"
+2hop_fractions_0003,error_verbalized,1,2,magnitude_error,,,,0.5478515625,0.8618053708757673,0.11605708514938724,False,0,False,0,,False,False,False,False,170,7,"Total slices: 20  
+"
+4hop_compound_interest_0018,clean,0,4,,,,,0.572265625,0.9208445725617586,0.052656008481104154,False,0,False,0,,False,False,False,False,115,27,"To find the balance after year 2, we apply the 5% annual interest compounded annually to the balance from year 1.
+
+"
+4hop_compound_interest_0018,error_standard,1,4,magnitude_error,,,,0.849609375,0.9789081970850627,0.012534903195611308,False,0,False,0,,False,False,False,False,114,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0018,error_verbalized,1,4,magnitude_error,,,,0.57666015625,0.9130231806865106,0.05218818585475374,False,0,False,0,,False,False,False,False,179,26,"We start with the balance after year 1: $2000 invested at 5% annual interest, compounded annually.
+
+"
+2hop_arithmetic_0015,clean,0,2,,,,,0.47607421875,0.8321231393253102,0.11651690253188005,False,0,False,0,,False,False,False,False,120,17,"Paul pays with a $45 bill and the total cost is $30.
+
+"
+2hop_arithmetic_0015,error_standard,1,2,off_by_one,,,,0.59619140625,0.8881088324955532,0.07232552760530875,False,0,False,0,,False,False,False,False,120,14,"Step 2: Paul pays with a $45 bill.  
+"
+2hop_arithmetic_0015,error_verbalized,1,2,off_by_one,,,,0.6162109375,0.9391982680872867,0.04218736217284891,False,0,False,0,,False,False,False,False,185,19,"He pays with a $45 bill, and the total cost is $31.  
+"
+3hop_compound_rate_0040,clean,0,3,,,,,0.740234375,0.9647519364953041,0.02059396890939953,False,0,False,0,,False,False,False,False,151,16,"The second leg is also 80 km at 40 km/h.
+
+"
+3hop_compound_rate_0040,error_standard,1,3,off_by_one,,,,0.62255859375,0.9410054647561276,0.034540171056132406,False,0,False,0,,False,False,False,False,144,33,"Since the car travels the second 80 km at the same speed of 40 km/h, it takes the same amount of time as the first leg.
+
+"
+3hop_compound_rate_0040,error_verbalized,1,3,off_by_one,,,,0.68603515625,0.9776383350635397,0.01343399486745678,False,0,False,0,,False,False,False,False,209,29,"The second leg is also 80 km at 40 km/h, so it takes the same amount of time as the first leg.
+
+"
+2hop_rate_distance_0031,clean,0,2,,,,,0.515625,0.9291282849652427,0.048188695780461255,False,0,False,0,,False,False,False,False,107,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0031,error_standard,1,2,wrong_operator,,,,0.85986328125,0.9768671223095485,0.012402308739800704,False,0,False,0,,False,False,False,False,110,14,"Step 2: Convert the travel time from hours to minutes.  
+
+"
+2hop_rate_distance_0031,error_verbalized,1,2,wrong_operator,,,,0.6298828125,0.9447569682680327,0.03399061968424667,False,0,False,0,,False,False,False,False,175,29,"We know the trip takes 2 hours (since 200 km ÷ 100 km/h = 2 hours).  
+"
+2hop_percentage_0009,clean,0,2,,,,,0.615234375,0.9339382807413737,0.040104089084582954,False,0,False,0,,False,False,False,False,117,15,"Step 2: Jack saves 40% of his total earnings.
+
+"
+2hop_percentage_0009,error_standard,1,2,wrong_percentage_base,,,,0.57763671875,0.9347140550613403,0.041167773039957174,False,0,False,0,,False,False,False,False,119,15,"Step 2: Jack saves 40% of his total earnings.
+
+"
+2hop_percentage_0009,error_verbalized,1,2,wrong_percentage_base,,,,0.8388671875,0.9746396200997489,0.013776287324921537,False,0,False,0,,False,False,False,False,184,14,"Jack saves 40% of $1800.  
+"
+3hop_compound_rate_0012,clean,0,3,,,,,0.84765625,0.9874978105227152,0.006863441406357745,False,0,False,0,,False,False,False,False,154,30,"Answer: 60 ÷ 60 = 1 hour = 60 minutes. The second leg takes 60 minutes.  
+
+"
+3hop_compound_rate_0012,error_standard,1,3,wrong_unit,,,,0.515625,0.9197833282606942,0.049998637102278976,False,0,False,0,,False,False,False,False,142,21,"To find how many minutes the second leg (60 km at 60 km/h) takes:
+
+"
+3hop_compound_rate_0012,error_verbalized,1,3,wrong_unit,,,,0.56494140625,0.8604578281703749,0.08692578548457697,False,0,False,0,,False,False,False,False,207,19,"We are given that the second leg is 60 km at 60 km/h.
+
+"
+2hop_counting_0009,clean,0,2,,,,,0.65576171875,0.8905739320649041,0.0652737033407713,False,0,False,0,,False,False,False,False,111,9,"Total items initially: 150  
+"
+2hop_counting_0009,error_standard,1,2,wrong_percentage_base,,,,0.83984375,0.9572332361165214,0.02427196918313354,False,0,False,0,,False,False,False,False,113,17,"Total items initially: 6 × 25 = 1500  
+"
+2hop_counting_0009,error_verbalized,1,2,wrong_percentage_base,,,,0.853515625,0.9676366183492873,0.01814291136896066,False,0,False,0,,False,False,False,False,178,9,"Total items: 1500  
+"
+2hop_percentage_0025,clean,0,2,,,,,0.62255859375,0.9359271128972372,0.038712352234121374,False,0,False,0,,False,False,False,False,115,15,"Step 2: Zoe saves 25% of his total earnings.
+
+"
+2hop_percentage_0025,error_standard,1,2,off_by_one,,,,0.7431640625,0.9461045861244202,0.030210503183240353,False,0,False,0,,False,False,False,False,115,15,"Step 2: Zoe saves 25% of his total earnings.
+
+"
+2hop_percentage_0025,error_verbalized,1,2,off_by_one,,,,0.9150390625,0.9872896713869912,0.0066214819434781,False,0,False,0,,False,False,False,False,180,14,"Zoe saves 25% of $121.  
+"
+4hop_nested_fractions_0000,clean,0,4,,,,,0.52294921875,0.8908716610499791,0.07233252296623173,False,0,False,0,,False,True,True,False,147,28,"We take the number of widgets that pass quality control, which is 2000, and find 1/2 of them:
+
+"
+4hop_nested_fractions_0000,error_standard,1,4,off_by_one,,,,0.371826171875,0.8976708246128899,0.07669768242436582,False,0,False,0,,False,True,True,False,147,28,"We take the number of widgets that pass quality control, which is 2001, and find 1/2 of them:
+
+"
+4hop_nested_fractions_0000,error_verbalized,1,4,off_by_one,,,,0.489990234375,0.903563674419157,0.0658064994726802,False,0,False,0,,False,True,True,False,212,31,"We take the number that passed quality control (2001) and multiply by 1/2 (since 1/2 are premium quality).
+
+"
+3hop_compound_rate_0030,clean,0,3,,,,,0.78173828125,0.9698406681418419,0.017091121194330462,False,0,False,0,,False,False,False,False,151,16,"The second leg is also 80 km at 40 km/h.
+
+"
+3hop_compound_rate_0030,error_standard,1,3,off_by_one,,,,0.64501953125,0.9379686959858599,0.036360888687188134,False,0,False,0,,False,False,False,False,144,29,"Since the second leg is also 80 km at 40 km/h, it takes the same amount of time as the first leg.
+
+"
+3hop_compound_rate_0030,error_verbalized,1,3,off_by_one,,,,0.5078125,0.9653813345678921,0.02375593295235311,False,0,False,0,,False,False,False,False,209,29,"The second leg is also 80 km at 40 km/h, so it takes the same amount of time as the first leg.
+
+"
+2hop_fractions_0027,clean,0,2,,,,,0.513671875,0.8370773752530416,0.12735833919895526,False,0,False,0,,False,True,True,False,103,15,"Step 2: The total number of slices is 20.  
+"
+2hop_fractions_0027,error_standard,1,2,wrong_unit,,,,0.376953125,0.847360122948885,0.11872019076314827,False,0,False,0,,False,True,True,False,105,16,"Step 2: The tart was cut into 20 equal slices.  
+"
+2hop_fractions_0027,error_verbalized,1,2,wrong_unit,,,,0.64892578125,0.90420515196664,0.07249239263585995,False,0,False,0,,False,True,True,False,170,7,"Total slices: 20  
+"
+3hop_percentage_chain_0038,clean,0,3,,,,,0.53955078125,0.7994223766856723,0.13217141791530232,False,0,False,0,,False,True,True,False,140,18,"Answer: 10% sales tax on $105 is calculated as:  
+"
+3hop_percentage_chain_0038,error_standard,1,3,magnitude_error,,,,0.5537109375,0.9134002675612768,0.059238172269434425,False,0,False,0,,False,True,True,False,128,36,"The discounted price is $150 − (30% of $150) = $150 − $45 = **$105**.
+
+"
+3hop_percentage_chain_0038,error_verbalized,1,3,magnitude_error,,,,0.76416015625,0.9774165486588198,0.013655913574490261,False,0,False,0,,True,True,True,False,193,34,"The discounted price is $150 - (30% of $150) = $150 - $45 = $105.
+
+"
+3hop_multi_stage_geometry_0035,clean,0,3,,,,,0.658203125,0.9594743192195893,0.02422037456220362,False,0,False,0,,False,False,False,False,127,20,"Each tile is 2 m × 2 m, so the area of one tile is:  
+"
+3hop_multi_stage_geometry_0035,error_standard,1,3,off_by_one,,,,0.5927734375,0.9547701805830002,0.028471747413325487,False,0,False,0,,False,False,False,False,125,20,"Each tile is 2 m × 2 m, so the area of one tile is:  
+"
+3hop_multi_stage_geometry_0035,error_verbalized,1,3,off_by_one,,,,0.5849609375,0.9262468990157632,0.045550490871382826,False,0,False,0,,False,False,False,False,190,17,"Each tile is 2 m × 2 m = 4 m².  
+"
+3hop_percentage_chain_0019,clean,0,3,,,,,0.59912109375,0.9529779245776515,0.028430199368369338,False,0,False,0,,False,True,False,True,140,31,"Answer: 12% of $140 = $140 × 0.12 = $16.80.  
+"
+3hop_percentage_chain_0019,error_standard,1,3,wrong_percentage_base,,,,0.84130859375,0.9715086284436678,0.01720936565802752,False,0,False,0,,False,True,False,True,130,19,"Step 2: How much is the 12% sales tax on the discounted price?
+
+"
+3hop_percentage_chain_0019,error_verbalized,1,3,wrong_percentage_base,,,,0.92822265625,0.9810593873262405,0.009767590307172017,False,0,False,0,,False,True,False,True,195,12,"The discounted price is $60.00.  
+"
+2hop_percentage_0033,clean,0,2,,,,,0.53125,0.9099676807721456,0.05672363016797165,False,0,False,0,,False,False,False,False,115,15,"Step 2: Henry saves 10% of his total earnings.
+
+"
+2hop_percentage_0033,error_standard,1,2,magnitude_error,,,,0.60009765625,0.9256182551383972,0.045326191320389925,False,0,False,0,,False,False,False,False,117,15,"Step 2: Henry saves 10% of his total earnings.
+
+"
+2hop_percentage_0033,error_verbalized,1,2,magnitude_error,,,,0.9267578125,0.9806769660540989,0.01006891094750344,False,0,False,0,,False,False,False,False,182,14,"Henry saves 10% of $1080.  
+"
+2hop_rate_distance_0030,clean,0,2,,,,,0.6298828125,0.9456889757088253,0.03375106021951296,False,0,False,0,,False,False,False,False,105,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0030,error_standard,1,2,off_by_one,,,,0.57763671875,0.9378015313829694,0.04014703192716969,False,0,False,0,,False,False,False,False,105,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0030,error_verbalized,1,2,off_by_one,,,,0.74951171875,0.9713744591264164,0.018694927552754936,False,0,False,0,,False,False,False,False,170,17,"4 hours × 60 minutes/hour = 240 minutes.  
+"
+4hop_nested_fractions_0021,clean,0,4,,,,,0.5537109375,0.9194036336506114,0.05386694105016103,False,0,False,0,,False,True,True,False,147,34,"We take the number of widgets that pass quality control, which is 3750, and find 1/2 of them to get the premium quality widgets.
+
+"
+4hop_nested_fractions_0021,error_standard,1,4,wrong_operator,,,,0.94482421875,0.9797194798787435,0.010726405986355023,False,0,False,0,,False,True,True,False,153,18,"We are given:
+
+- The facility produces **5000 widgets per day**.
+"
+4hop_nested_fractions_0021,error_verbalized,1,4,wrong_operator,,,,0.67919921875,0.91356080419877,0.05091214234172253,False,0,False,0,,False,True,True,False,218,17,"We are given:
+
+- Total widgets produced per day: 5000  
+"
+2hop_percentage_0042,clean,0,2,,,,,0.546875,0.8822774569193522,0.07742566679208641,False,0,False,0,,False,False,False,False,117,15,"Step 2: Quinn saves 30% of her total earnings.
+
+"
+2hop_percentage_0042,error_standard,1,2,wrong_unit,,,,0.5,0.8832658678293228,0.07399265251204275,False,0,False,0,,False,False,False,False,119,16,"Step 2: Quinn saves 30% of her total earnings.  
+"
+2hop_percentage_0042,error_verbalized,1,2,wrong_unit,,,,0.8759765625,0.9714768052101135,0.015870408620168898,False,0,False,0,,False,False,False,False,184,15,"Quinn saves 30% of $2500.  
+"
+4hop_multi_stage_allocation_0024,clean,0,4,,,,,0.8115234375,0.9603233002126217,0.021566023336556175,False,0,False,0,,False,False,False,False,145,16,"After spending 20% on salaries, $4000 remains.
+
+"
+4hop_multi_stage_allocation_0024,error_standard,1,4,wrong_percentage_base,,,,0.5068359375,0.8697613337460686,0.08265897643699252,False,0,False,0,,False,False,False,False,148,34,"After spending 20% on salaries, $4000 remains (since 80% of $5000 is $4000).
+
+"
+4hop_multi_stage_allocation_0024,error_verbalized,1,4,wrong_percentage_base,,,,0.50732421875,0.8065379671752453,0.12698260698049993,False,0,False,0,,False,False,False,False,213,16,"We start with the remaining amount after salaries: $1000.  
+"
+3hop_compound_rate_0038,clean,0,3,,,,,0.390625,0.9498403519392014,0.04116347803813347,False,0,False,0,,False,False,False,False,154,32,"Answer: 80 ÷ 40 = 2 hours = 120 minutes. The second leg takes 120 minutes.  
+
+"
+3hop_compound_rate_0038,error_standard,1,3,magnitude_error,,,,0.82666015625,0.9709926843643188,0.015688962545868695,False,0,False,0,,False,False,False,False,148,21,"To find how many minutes the second leg (80 km at 40 km/h) takes:
+
+"
+3hop_compound_rate_0038,error_verbalized,1,3,magnitude_error,,,,0.3193359375,0.862473640176985,0.1411630223562783,False,0,False,0,,False,False,False,False,213,9,"To find how long the second leg takes:
+
+"
+3hop_percentage_chain_0032,clean,0,3,,,,,0.4951171875,0.9430381373355263,0.03975897197458913,False,0,False,0,,False,True,True,False,146,19,"Step 2: How much is the 12% sales tax on the discounted price?
+
+"
+3hop_percentage_chain_0032,error_standard,1,3,wrong_unit,,,,0.325927734375,0.8394369912147522,0.12671204588054205,False,0,False,0,,False,True,True,False,128,25,"The discounted price is **$112.50**, not $1125. Let's correct that.
+
+"
+3hop_percentage_chain_0032,error_verbalized,1,3,wrong_unit,,,,0.50048828125,0.9376265481114388,0.04281686530554748,False,0,False,0,,True,True,True,False,193,40,"The discounted price is $150 - (25% of $150) = $150 - $37.50 = $112.50.
+
+"
+3hop_multi_stage_geometry_0042,clean,0,3,,,,,0.513671875,0.9463454961776734,0.03654636692460704,False,0,False,0,,False,False,False,False,127,20,"Each tile is 1 m × 2 m, so the area of one tile is:  
+"
+3hop_multi_stage_geometry_0042,error_standard,1,3,wrong_unit,,,,0.50390625,0.940818937201249,0.04036441095167886,False,0,False,0,,False,False,False,False,127,19,"Each tile is 1 m × 2 m, so the area of one tile is:
+
+"
+3hop_multi_stage_geometry_0042,error_verbalized,1,3,wrong_unit,,,,0.6708984375,0.975778501609276,0.015258041797117849,False,0,False,0,,False,False,False,False,192,29,"Each tile is 1 m × 2 m, so area of one tile = 1 × 2 = 2 m².  
+"
+3hop_percentage_chain_0041,clean,0,3,,,,,0.59765625,0.9428949952125549,0.03406236999051953,False,0,False,0,,False,True,True,False,135,28,"Answer: 12% of $64 = $64 × 0.12 = $7.68.  
+
+"
+3hop_percentage_chain_0041,error_standard,1,3,wrong_operator,,,,0.4345703125,0.7379118017852306,0.19661386362936453,False,0,False,0,,False,True,True,False,124,16,"The discounted price is $64? Wait — that can't be right.
+
+"
+3hop_percentage_chain_0041,error_verbalized,1,3,wrong_operator,,,,0.56689453125,0.9369502206643422,0.041025592353730635,False,0,False,0,,False,True,True,False,189,30,"The discounted price is $80 − (20% of $80) = $80 − $16 = $64.
+
+"
+2hop_arithmetic_0012,clean,0,2,,,,,0.546875,0.8842132593456068,0.07052950318067062,False,0,False,0,,False,False,False,False,121,19,"Step 2: Mia pays $36 and the total cost is $21.  
+
+"
+2hop_arithmetic_0012,error_standard,1,2,wrong_unit,,,,0.79833984375,0.9557405625070844,0.02480383538139226,False,0,False,0,,False,False,False,False,123,21,"Mia pays with a $36 bill, but the total cost of 7 mangos is:
+
+"
+2hop_arithmetic_0012,error_verbalized,1,2,wrong_unit,,,,0.56201171875,0.8920455995727988,0.06692922341324938,False,0,False,0,,False,False,False,False,188,17,"Mia pays $36, but the total cost is $21.  
+"
+2hop_counting_0017,clean,0,2,,,,,0.49267578125,0.8106107849341172,0.12926563956752654,False,0,False,0,,False,False,False,False,109,13,"Step 2:  
+Total items initially = 45  
+"
+2hop_counting_0017,error_standard,1,2,wrong_unit,,,,0.5927734375,0.8879702906859549,0.07362536676865854,False,0,False,0,,False,False,False,False,111,19,"Total items initially: 3 shelves × 15 items = 45 items.  
+"
+2hop_counting_0017,error_verbalized,1,2,wrong_unit,,,,0.6474609375,0.8931664360894097,0.06396808789121015,False,0,False,0,,False,False,False,False,176,9,"Total items initially: 450  
+"
+2hop_fractions_0014,clean,0,2,,,,,0.5771484375,0.8499517718950907,0.11189021376018997,False,0,False,0,,False,False,False,False,103,15,"Step 2: The total number of slices is 12.  
+"
+2hop_fractions_0014,error_standard,1,2,wrong_percentage_base,,,,0.39599609375,0.8130034936798943,0.16164607537783293,False,0,False,0,,False,False,False,False,105,9,"We started with 12 equal slices.
+
+"
+2hop_fractions_0014,error_verbalized,1,2,wrong_percentage_base,,,,0.37890625,0.7806737763541085,0.23516974711746655,False,0,False,0,,False,False,False,False,170,7,"Total slices: 12  
+"
+4hop_compound_interest_0003,clean,0,4,,,,,0.5283203125,0.919097383817037,0.05287905492837119,False,0,False,0,,False,False,False,False,115,27,"To find the balance after year 2, we apply the 5% annual interest compounded annually to the balance from year 1.
+
+"
+4hop_compound_interest_0003,error_standard,1,4,magnitude_error,,,,0.92626953125,0.9847002347310384,0.008498331697156082,False,0,False,0,,False,False,False,False,114,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0003,error_verbalized,1,4,magnitude_error,,,,0.64208984375,0.8838889449834824,0.06946432603208422,False,0,False,0,,False,False,False,False,179,16,"We start with the balance after year 1: $1050.
+
+"
+2hop_fractions_0034,clean,0,2,,,,,0.48974609375,0.8003166232790265,0.15712403546887216,False,0,False,0,,False,False,False,False,103,14,"Step 2: The cake originally has 10 slices.  
+"
+2hop_fractions_0034,error_standard,1,2,wrong_percentage_base,,,,0.525390625,0.7475100755691528,0.1734464885994478,False,0,False,0,,False,False,False,False,105,11,"We started with 10 equal slices of cake.
+
+"
+2hop_fractions_0034,error_verbalized,1,2,wrong_percentage_base,,,,0.456787109375,0.7956359471593585,0.18817814350352413,False,0,False,0,,False,False,False,False,170,7,"Total slices: 10  
+"
+4hop_multi_stage_geometry_4_0004,clean,0,4,,,,,0.48681640625,0.6676383912563324,0.24078984910134993,False,0,False,0,,False,True,True,False,143,12,"The building occupies **1/3** of the plot.
+
+"
+4hop_multi_stage_geometry_4_0004,error_standard,1,4,wrong_percentage_base,,,,0.5234375,0.8700803879535559,0.08314409835315378,False,0,False,0,,False,True,True,False,143,33,"We are told that **1/3 of the plot is used for a building**, so the garden area is the remaining **2/3** of the plot.
+
+"
+4hop_multi_stage_geometry_4_0004,error_verbalized,1,4,wrong_percentage_base,,,,0.53076171875,0.8483035669607275,0.1075738239568211,False,0,False,0,,False,True,True,False,208,17,"The building uses 1/3 of the plot, so the garden area is:
+
+"
+4hop_multi_stage_allocation_0011,clean,0,4,,,,,0.6435546875,0.9395270831882954,0.03581100521229388,False,0,False,0,,False,False,False,False,144,16,"After spending 20% on salaries, $1600 remains.
+
+"
+4hop_multi_stage_allocation_0011,error_standard,1,4,wrong_operator,,,,0.56201171875,0.8317623972892761,0.11640646397718006,False,0,False,0,,False,False,False,False,143,15,"We start with the original budget of **$2000**.
+
+"
+4hop_multi_stage_allocation_0011,error_verbalized,1,4,wrong_operator,,,,0.55908203125,0.826784202685723,0.12650851153376547,False,0,False,0,,False,False,False,False,208,13,"We start with the original budget of $2000.
+
+"
+4hop_compound_interest_0016,clean,0,4,,,,,0.5390625,0.880313515663147,0.07838804256986869,False,0,False,0,,False,False,True,False,115,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0016,error_standard,1,4,wrong_operator,,,,0.9111328125,0.9884087204933166,0.007052724277329984,False,0,False,0,,False,False,True,False,114,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0016,error_verbalized,1,4,wrong_operator,,,,0.50927734375,0.7543483291353498,0.1712159098271913,False,0,False,0,,False,False,True,False,179,14,"We are given:
+
+- Initial investment: $5000  
+"
+2hop_counting_0001,clean,0,2,,,,,0.3974609375,0.8417823672294616,0.12004826289218014,False,0,False,0,,False,False,False,False,107,20,"Step 2: After 9 items are taken out, the number of items remaining is:  
+"
+2hop_counting_0001,error_standard,1,2,wrong_operator,,,,0.55322265625,0.8602275980843438,0.08594732729527262,False,0,False,0,,False,False,False,False,107,18,"Total items initially:  
+5 shelves × 12 items = **60 items**
+
+"
+2hop_counting_0001,error_verbalized,1,2,wrong_operator,,,,0.62109375,0.9350239137808481,0.04138695262150269,False,0,False,0,,False,False,False,False,172,18,"Total items initially: 5 shelves × 12 items = 60 items  
+"
+2hop_percentage_0046,clean,0,2,,,,,0.69287109375,0.9283316759836107,0.04199352447017742,False,0,False,0,,False,False,False,False,115,21,"Step 2: To find how much Uma saves, calculate 10% of her total earnings.
+
+"
+2hop_percentage_0046,error_standard,1,2,wrong_operator,,,,0.430419921875,0.9036151170730591,0.06919991797928021,False,0,False,0,,False,False,False,False,113,23,"Step 2: Uma earns $25 per hour and works 9 hours, so her total earnings are:
+
+"
+2hop_percentage_0046,error_verbalized,1,2,wrong_operator,,,,0.8798828125,0.9780442178249359,0.01184639236282565,False,0,False,0,,False,False,False,False,178,20,"Uma earns $25 per hour and works 9 hours, so her total earnings are:
+
+"
+3hop_percentage_chain_0043,clean,0,3,,,,,0.658203125,0.8577804327011108,0.08475830098409946,False,0,False,0,,False,True,True,False,133,15,"Answer: 8% sales tax on $54 is calculated as:
+
+"
+3hop_percentage_chain_0043,error_standard,1,3,magnitude_error,,,,0.60791015625,0.8548223940949691,0.10406006635461137,False,0,False,0,,False,True,True,False,122,19,"The discounted price is $54, not $540. Let's correct that.
+
+"
+3hop_percentage_chain_0043,error_verbalized,1,3,magnitude_error,,,,0.70263671875,0.9662597878225918,0.019494584682786434,False,0,False,0,,True,True,True,False,187,29,"The discounted price is $60 - (10% of $60) = $60 - $6 = $54.
+
+"
+2hop_counting_0015,clean,0,2,,,,,0.751953125,0.8663864089892461,0.07854735233054602,False,0,False,0,,False,False,False,False,109,13,"Step 2:  
+Total items initially = 84  
+"
+2hop_counting_0015,error_standard,1,2,off_by_one,,,,0.64404296875,0.8824310898780823,0.0712509050629801,False,0,False,0,,False,False,False,False,109,24,"Step 2:  
+Total items initially = 7 shelves × 12 items = 84 items.  
+
+"
+2hop_counting_0015,error_verbalized,1,2,off_by_one,,,,0.9267578125,0.973853988306863,0.016109122413590034,False,0,False,0,,False,False,False,False,174,7,"Total items: 85  
+"
+2hop_fractions_0026,clean,0,2,,,,,0.50244140625,0.860092822710673,0.10691817012029486,False,0,False,0,,False,False,False,False,101,15,"Step 2: The cake was cut into 8 equal slices.  
+"
+2hop_fractions_0026,error_standard,1,2,wrong_operator,,,,0.5146484375,0.9240376515821977,0.05703450768512098,False,0,False,0,,False,False,False,False,101,33,"Step 2: Since the cake was cut into 8 equal slices and 4 people each ate 1 slice, a total of 4 slices are eaten.
+
+"
+2hop_fractions_0026,error_verbalized,1,2,wrong_operator,,,,0.51611328125,0.6801022291183472,0.2395450734614865,False,0,False,0,,False,False,False,False,166,8,"There were 8 slices originally.  
+"
+4hop_multi_stage_allocation_0016,clean,0,4,,,,,0.78173828125,0.9522561152776082,0.026229616620311293,False,0,False,0,,False,True,False,True,142,15,"After spending 25% on salaries, $750 remains.
+
+"
+4hop_multi_stage_allocation_0016,error_standard,1,4,wrong_operator,,,,0.5283203125,0.8814424531800407,0.07833545599894447,False,0,False,0,,False,True,False,True,141,14,"After spending 25% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0016,error_verbalized,1,4,wrong_operator,,,,0.53125,0.8439305557145013,0.10995170393324008,False,0,False,0,,False,True,False,True,206,18,"We already found that after spending 25% on salaries, the remaining budget is:
+
+"
+2hop_arithmetic_0021,clean,0,2,,,,,0.470703125,0.8658422367139296,0.09255637050639268,False,0,False,0,,False,False,False,False,117,22,"Step 2: Victor pays with a $55 bill and the total cost is $40.  
+
+"
+2hop_arithmetic_0021,error_standard,1,2,wrong_operator,,,,0.55322265625,0.8944567690292994,0.06491263586506792,False,0,False,0,,False,False,False,False,117,24,"Step 2: Victor pays $55, and the total cost of 5 oranges at $8 each is:
+
+"
+2hop_arithmetic_0021,error_verbalized,1,2,wrong_operator,,,,0.52392578125,0.8697639107704163,0.0870114275398139,False,0,False,0,,False,False,False,False,182,12,"Total cost for 5 oranges at $8 each:  
+"
+2hop_fractions_0022,clean,0,2,,,,,0.57470703125,0.9177152924239635,0.06834090490420375,False,0,False,0,,False,False,False,False,103,16,"Step 2: What fraction of the loaf's 20 slices remains?
+
+"
+2hop_fractions_0022,error_standard,1,2,wrong_unit,,,,0.57470703125,0.8609727961676461,0.09694594984282401,False,0,False,0,,False,False,False,False,105,14,"Step 2: The loaf originally has 20 slices.  
+"
+2hop_fractions_0022,error_verbalized,1,2,wrong_unit,,,,0.53564453125,0.8557272638593402,0.11893214755009127,False,0,False,0,,False,False,False,False,170,7,"Total slices: 20  
+"
+3hop_compound_rate_0002,clean,0,3,,,,,0.499755859375,0.9526191465556622,0.03389105075482549,False,0,False,0,,False,False,False,False,154,32,"Answer: 60 ÷ 30 = 2 hours = 120 minutes. The second leg takes 120 minutes.  
+
+"
+3hop_compound_rate_0002,error_standard,1,3,wrong_unit,,,,0.71240234375,0.898981425497267,0.056810320881703597,False,0,False,0,,False,False,False,False,142,9,"To find how long the second leg takes:
+
+"
+3hop_compound_rate_0002,error_verbalized,1,3,wrong_unit,,,,0.59228515625,0.847032041926133,0.09786231773511482,False,0,False,0,,False,False,False,False,207,19,"We are given that the second leg is 60 km at 30 km/h.
+
+"
+2hop_counting_0021,clean,0,2,,,,,0.73583984375,0.9033115001825186,0.060550720823139795,False,0,False,0,,False,False,False,False,109,13,"Step 2:  
+Total items initially = 30  
+"
+2hop_counting_0021,error_standard,1,2,wrong_operator,,,,0.56103515625,0.8980049930120769,0.06763763692851567,False,0,False,0,,False,False,False,False,109,19,"Total items initially: 3 shelves × 10 items = 30 items.  
+
+"
+2hop_counting_0021,error_verbalized,1,2,wrong_operator,,,,0.58740234375,0.95065354673486,0.032010188504506855,False,0,False,0,,False,False,False,False,174,19,"Total items initially: 3 shelves × 10 items = 30 items.  
+"
+4hop_multi_stage_allocation_0009,clean,0,4,,,,,0.82568359375,0.9530129392941793,0.0253723979515979,False,0,False,0,,False,True,False,True,143,15,"After spending 20% on salaries, $800 remains.
+
+"
+4hop_multi_stage_allocation_0009,error_standard,1,4,wrong_percentage_base,,,,0.83544921875,0.9597604563159328,0.023048624653420766,False,0,False,0,,True,True,False,True,146,31,"After spending 20% on salaries, $800 remains (since 100% - 20% = 80%).
+
+"
+4hop_multi_stage_allocation_0009,error_verbalized,1,4,wrong_percentage_base,,,,0.607421875,0.8252224802970887,0.10726875981964965,False,0,False,0,,False,True,False,True,211,10,"After salaries, $200 remains.  
+"
+2hop_fractions_0036,clean,0,2,,,,,0.5927734375,0.8826017007231712,0.07867587537717581,False,0,False,0,,False,False,False,False,104,16,"Step 2: The quiche was cut into 8 equal slices.  
+"
+2hop_fractions_0036,error_standard,1,2,wrong_operator,,,,0.56298828125,0.9321065954864025,0.05796370063916983,False,0,False,0,,False,False,False,False,104,16,"Step 2: What fraction of the quiche's 8 slices remains?
+
+"
+2hop_fractions_0036,error_verbalized,1,2,wrong_operator,,,,0.47998046875,0.764764795700709,0.16452325949289218,False,0,False,0,,False,False,False,False,169,6,"Total slices: 8  
+"
+4hop_nested_fractions_0006,clean,0,4,,,,,0.495849609375,0.9109034047407263,0.06222926400968986,False,0,False,0,,False,True,True,False,147,34,"We take the number of widgets that pass quality control, which is 1600, and find 1/2 of them to get the premium quality widgets.
+
+"
+4hop_nested_fractions_0006,error_standard,1,4,wrong_operator,,,,0.966796875,0.9881745013925765,0.006542040583867047,False,0,False,0,,False,True,True,False,153,18,"We are given:
+
+- The factory produces **2000 widgets per day**.
+"
+4hop_nested_fractions_0006,error_verbalized,1,4,wrong_operator,,,,0.69921875,0.9156748371965745,0.05072494897424556,False,0,False,0,,False,True,True,False,218,17,"We are given:
+
+- The factory produces 2000 widgets per day.
+"
+3hop_multi_stage_geometry_0005,clean,0,3,,,,,0.86328125,0.976620078086853,0.012378332077246127,False,0,False,0,,False,False,False,False,131,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0005,error_standard,1,3,off_by_one,,,,0.91259765625,0.9771232519830976,0.011907740749507527,False,0,False,0,,False,False,False,False,129,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0005,error_verbalized,1,3,off_by_one,,,,0.86962890625,0.9875051152138483,0.006721625857889155,False,0,False,0,,False,False,False,False,194,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0027,clean,0,3,,,,,0.78271484375,0.9699156624930245,0.01654413102214065,False,0,False,0,,False,False,False,False,129,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0027,error_standard,1,3,wrong_unit,,,,0.66552734375,0.9477928791727338,0.030453087619538938,False,0,False,0,,False,False,False,False,129,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_multi_stage_geometry_0027,error_verbalized,1,3,wrong_unit,,,,0.9013671875,0.9899357301848275,0.005294049008038954,False,0,False,0,,False,False,False,False,194,21,"Each tile is 1 m × 1 m, so each tile covers 1 m².  
+"
+3hop_percentage_chain_0001,clean,0,3,,,,,0.5390625,0.9414404439074653,0.03619560632341089,False,0,False,0,,False,True,True,False,135,28,"Answer: 10% of $45 = $45 × 0.10 = $4.50.  
+
+"
+3hop_percentage_chain_0001,error_standard,1,3,wrong_operator,,,,0.65673828125,0.8247716352343559,0.11428149950840816,False,0,False,0,,False,True,True,False,124,16,"The discounted price is $45? Wait — that can't be right.
+
+"
+3hop_percentage_chain_0001,error_verbalized,1,3,wrong_operator,,,,0.484619140625,0.8700192123651505,0.08804295052990566,False,0,False,0,,False,True,True,False,189,16,"The shirt is discounted by 25%, so the price after discount is:
+
+"
+4hop_compound_interest_0011,clean,0,4,,,,,0.59716796875,0.9088356388466698,0.06046659243776523,False,0,False,0,,False,False,False,False,113,28,"To find the balance after year 2, we compound the interest again using the same annual interest rate of 12%, compounded annually.
+
+"
+4hop_compound_interest_0011,error_standard,1,4,wrong_operator,,,,0.802734375,0.9678975502649944,0.020006266019823186,False,0,False,0,,False,False,False,False,112,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0011,error_verbalized,1,4,wrong_operator,,,,0.73095703125,0.8994116324644822,0.057072358678429844,False,0,False,0,,False,False,False,False,177,13,"We are given:
+
+- Initial investment: $500  
+"
+2hop_rate_distance_0047,clean,0,2,,,,,0.53125,0.9315735868045262,0.04591573176606577,False,0,False,0,,False,False,False,False,105,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0047,error_standard,1,2,wrong_unit,,,,0.84375,0.965271111045565,0.018625421703466902,False,0,False,0,,False,False,False,False,109,14,"Step 2: Convert the travel time from hours to minutes.  
+
+"
+2hop_rate_distance_0047,error_verbalized,1,2,wrong_unit,,,,0.916015625,0.9806719372669855,0.011101995206917346,False,0,False,0,,False,False,False,False,174,12,"We know the trip takes 120 hours.  
+"
+planning_budget_0019,clean,0,4,,,,,0.57763671875,0.9502205577763644,0.03232819165802205,False,0,False,0,,False,False,False,False,125,22,"The HR department requested 250, but the maximum limit per department is 200.  
+
+"
+planning_budget_0019,error_standard,1,4,constraint_violation,,,,0.57763671875,0.9502205577763644,0.03232819165802205,False,0,False,0,,False,False,False,False,125,22,"The HR department requested 250, but the maximum limit per department is 200.  
+
+"
+planning_budget_0019,error_verbalized,1,4,constraint_violation,,,,0.9150390625,0.991443410001952,0.004979699811678121,False,0,False,0,,False,False,False,False,190,29,"HR requested 250, but the maximum per department is 200. Therefore, only 200 can be allocated.
+
+"
+4hop_multi_stage_geometry_4_0000,clean,0,4,,,,,0.492919921875,0.8498618787732618,0.09238327631926808,False,0,False,0,,False,False,False,False,143,29,"The building uses **1/2** of the plot, so the garden area is the remaining **1/2** of the total area.
+
+"
+4hop_multi_stage_geometry_4_0000,error_standard,1,4,off_by_one,,,,0.49267578125,0.8056032605793165,0.13016473517708518,False,0,False,0,,False,False,False,False,141,23,"The building uses 1/2 of the plot, so the garden area is the remaining 1/2.
+
+"
+4hop_multi_stage_geometry_4_0000,error_verbalized,1,4,off_by_one,,,,0.8310546875,0.9618330001831055,0.020769858615510114,False,0,False,0,,False,False,False,False,206,23,"The building uses 1/2 of the plot, so the garden area is the other 1/2.
+
+"
+3hop_compound_rate_0022,clean,0,3,,,,,0.89892578125,0.9747237960497538,0.013253335593558352,False,0,False,0,,False,False,False,False,151,9,"To find how long the second leg takes:
+
+"
+3hop_compound_rate_0022,error_standard,1,3,wrong_unit,,,,0.658203125,0.9050761130121019,0.05627288904611859,False,0,False,0,,False,False,False,False,142,9,"To find how long the second leg takes:
+
+"
+3hop_compound_rate_0022,error_verbalized,1,3,wrong_unit,,,,0.869140625,0.9435860249731276,0.029839386062415114,False,0,False,0,,False,False,False,False,207,9,"To find how long the second leg takes:
+
+"
+4hop_multi_stage_allocation_0008,clean,0,4,,,,,0.88720703125,0.9585988186299801,0.021838573740491952,False,0,False,0,,False,False,False,False,146,16,"After spending 30% on salaries, $7000 remains.
+
+"
+4hop_multi_stage_allocation_0008,error_standard,1,4,magnitude_error,,,,0.83984375,0.9640533370631081,0.019398933704677716,False,0,False,0,,False,False,False,False,145,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0008,error_verbalized,1,4,magnitude_error,,,,0.64404296875,0.8914167881011963,0.06548122072970776,False,0,False,0,,False,False,False,False,210,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_geometry_4_0005,clean,0,4,,,,,0.67919921875,0.898531494140625,0.060006079624041725,False,0,False,0,,False,True,True,False,142,25,"We are told that **3/5 of the plot is used for a building**, so the remaining area is the garden.
+
+"
+4hop_multi_stage_geometry_4_0005,error_standard,1,4,off_by_one,,,,0.5283203125,0.7852955857912699,0.14404925354594925,False,0,False,0,,False,True,True,False,140,9,"The total area of the plot is:  
+"
+4hop_multi_stage_geometry_4_0005,error_verbalized,1,4,off_by_one,,,,0.564453125,0.8877130617266116,0.07052879869367888,False,0,False,0,,False,True,True,False,205,23,"The building uses 3/5 of the plot, so the garden area is the remaining 2/5.
+
+"
+4hop_compound_interest_0024,clean,0,4,,,,,0.5390625,0.880313515663147,0.07838804256986869,False,0,False,0,,False,False,True,False,115,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0024,error_standard,1,4,wrong_percentage_base,,,,0.771484375,0.9544121066729228,0.02732265827302129,False,0,False,0,,False,False,True,False,117,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0024,error_verbalized,1,4,wrong_percentage_base,,,,0.67138671875,0.8822429094995771,0.06878398678911565,False,0,False,0,,False,False,True,False,182,14,"We are given:
+
+- Initial investment: $5000  
+"
+4hop_multi_stage_geometry_4_0006,clean,0,4,,,,,0.546875,0.819624169005288,0.11108300567470288,False,0,False,0,,False,True,True,False,142,18,"We are told that **2/5 of the plot is used for a building**.
+
+"
+4hop_multi_stage_geometry_4_0006,error_standard,1,4,wrong_operator,,,,0.50537109375,0.8047745898365974,0.1388930050179698,False,0,False,0,,False,True,True,False,138,8,"The total area of the plot is:
+
+"
+4hop_multi_stage_geometry_4_0006,error_verbalized,1,4,wrong_operator,,,,0.53076171875,0.9177261331807012,0.05777470517703194,False,0,False,0,,False,True,True,False,203,23,"Total area of the plot = 20 m × 10 m = 200 m²
+
+"
+4hop_multi_stage_allocation_0007,clean,0,4,,,,,0.7119140625,0.9398843124508858,0.03404442434307043,False,0,False,0,,False,True,True,False,144,16,"After spending 30% on salaries, $3500 remains.
+
+"
+4hop_multi_stage_allocation_0007,error_standard,1,4,wrong_unit,,,,0.70751953125,0.9515351525374821,0.03017263456900941,False,0,False,0,,False,True,True,False,143,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0007,error_verbalized,1,4,wrong_unit,,,,0.6923828125,0.9033568842070443,0.06011423549363759,False,0,False,0,,False,True,True,False,208,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+4hop_compound_interest_0017,clean,0,4,,,,,0.51318359375,0.915104471720182,0.05698870059475374,False,0,False,0,,False,False,False,False,113,26,"To find the balance after year 2, we apply the 10% annual interest to the balance from year 1.
+
+"
+4hop_compound_interest_0017,error_standard,1,4,wrong_unit,,,,0.90771484375,0.9883846958478292,0.007990822400565,False,0,False,0,,False,False,False,False,112,15,"To find the balance after year 2, we compound the interest annually.
+
+"
+4hop_compound_interest_0017,error_verbalized,1,4,wrong_unit,,,,0.5439453125,0.8677779793739319,0.08514849926240746,False,0,False,0,,False,False,False,False,177,15,"We start with the balance after year 1: $550.
+
+"
+4hop_multi_stage_allocation_0003,clean,0,4,,,,,0.63623046875,0.9221762776374817,0.045912272629454236,False,0,False,0,,False,True,False,True,142,15,"After spending 30% on salaries, $700 remains.
+
+"
+4hop_multi_stage_allocation_0003,error_standard,1,4,magnitude_error,,,,0.6845703125,0.9454328204904284,0.03232935397990642,False,0,False,0,,False,True,False,True,141,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0003,error_verbalized,1,4,magnitude_error,,,,0.65234375,0.8918432933943612,0.06408028476710076,False,0,False,0,,False,True,False,True,206,14,"After spending 30% on salaries, the remaining budget is:
+
+"
+2hop_rate_distance_0019,clean,0,2,,,,,0.56201171875,0.9355792105197906,0.042140405044869336,False,0,False,0,,False,False,False,False,105,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0019,error_standard,1,2,wrong_percentage_base,,,,0.62255859375,0.9423282146453857,0.035788175712027734,False,0,False,0,,False,False,False,False,107,14,"Step 2: Convert the travel time from hours to minutes.  
+
+"
+2hop_rate_distance_0019,error_verbalized,1,2,wrong_percentage_base,,,,0.71728515625,0.9547088850628246,0.032128703353295714,False,0,False,0,,False,False,False,False,172,11,"We know the trip takes 30 hours.  
+"
+2hop_percentage_0038,clean,0,2,,,,,0.62255859375,0.9426285068194071,0.03520968727190391,False,0,False,0,,False,False,False,False,115,15,"Step 2: Mia saves 25% of her total earnings.
+
+"
+2hop_percentage_0038,error_standard,1,2,magnitude_error,,,,0.67919921875,0.9441659013430278,0.03262397248365276,False,0,False,0,,False,False,False,False,117,15,"Step 2: Mia saves 25% of her total earnings.
+
+"
+2hop_percentage_0038,error_verbalized,1,2,magnitude_error,,,,0.90185546875,0.9843862573305766,0.0081631345818626,False,0,False,0,,False,False,False,False,182,15,"Mia saves 25% of $1080.  
+"
+2hop_percentage_0024,clean,0,2,,,,,0.5126953125,0.9233190598695175,0.049763388696501334,False,0,False,0,,False,True,True,False,121,23,"Step 2: To find out how much Yara saves, calculate 25% of her total earnings.
+
+"
+2hop_percentage_0024,error_standard,1,2,wrong_percentage_base,,,,0.546875,0.9325225482816282,0.04259381032519166,False,0,False,0,,False,True,True,False,123,23,"Step 2: To find out how much Yara saves, calculate 25% of her total earnings.
+
+"
+2hop_percentage_0024,error_verbalized,1,2,wrong_percentage_base,,,,0.8984375,0.9803390304247538,0.010667947244891821,False,0,False,0,,False,True,True,False,188,15,"Yara saves 25% of $1000.  
+"
+2hop_arithmetic_0022,clean,0,2,,,,,0.56640625,0.9102357133575107,0.05395954970957859,False,0,False,0,,False,False,False,False,121,23,"Step 2: Wendy pays $37 and the total cost of the mangos is $12.  
+
+"
+2hop_arithmetic_0022,error_standard,1,2,wrong_unit,,,,0.60009765625,0.9209876679457151,0.04955820894007312,False,0,False,0,,False,False,False,False,123,26,"Wendy pays with a $37 bill, but the total cost of 4 mangos at $3 each is:
+
+"
+2hop_arithmetic_0022,error_verbalized,1,2,wrong_unit,,,,0.5029296875,0.844713052113851,0.10307971629076966,False,0,False,0,,False,False,False,False,188,30,"Wendy pays $37, but the total cost of 4 mangos is $12? Wait — that can't be right.
+
+"
+2hop_arithmetic_0014,clean,0,2,,,,,0.556640625,0.9316796822981401,0.04631341759102356,False,0,False,0,,False,False,False,False,123,22,"Step 2: Olivia pays with a $65 bill and the total cost is $45.  
+
+"
+2hop_arithmetic_0014,error_standard,1,2,wrong_percentage_base,,,,0.7158203125,0.954922962756384,0.026567916324299327,False,0,False,0,,False,False,False,False,125,21,"Olivia pays with a $65 bill, but the total cost of 3 plums is:
+
+"
+2hop_arithmetic_0014,error_verbalized,1,2,wrong_percentage_base,,,,0.7119140625,0.8587469935417176,0.08090324745593971,False,0,False,0,,False,False,False,False,190,20,"Olivia pays with a $65 bill, but the total cost is $45.  
+"
+2hop_rate_distance_0006,clean,0,2,,,,,0.546875,0.9337469807692936,0.04388011327759558,False,0,False,0,,False,False,False,False,107,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0006,error_standard,1,2,wrong_operator,,,,0.463623046875,0.9329550229012966,0.06142884667214562,False,0,False,0,,False,False,False,False,110,16,"The van travels 100 km at 100 km/h.
+
+"
+2hop_rate_distance_0006,error_verbalized,1,2,wrong_operator,,,,0.685546875,0.9443396951841272,0.03232965715043428,False,0,False,0,,False,False,False,False,175,23,"The van travels 100 km at 100 km/h, so the time in hours is:
+
+"
+4hop_multi_stage_geometry_4_0010,clean,0,4,,,,,0.51025390625,0.8104761209752824,0.12230233403661178,False,0,False,0,,False,True,True,False,142,18,"We are told that **1/3 of the plot is used for a building**.
+
+"
+4hop_multi_stage_geometry_4_0010,error_standard,1,4,off_by_one,,,,0.68994140625,0.8943933447202047,0.06434694931373891,False,0,False,0,,False,True,True,False,140,9,"The total area of the plot is:  
+"
+4hop_multi_stage_geometry_4_0010,error_verbalized,1,4,off_by_one,,,,0.6513671875,0.9295832371711731,0.04275797392191013,False,0,False,0,,False,True,True,False,205,25,"The total area of the plot is 50 m × 10 m = 500 m².  
+"
+2hop_percentage_0018,clean,0,2,,,,,0.546875,0.911053117364645,0.05468915801494906,False,0,False,0,,False,False,False,False,113,16,"Step 2: Sam saves 15% of her total earnings.  
+"
+2hop_percentage_0018,error_standard,1,2,magnitude_error,,,,0.56982421875,0.8809657295544943,0.07446385634396549,False,0,False,0,,False,False,False,False,115,15,"Step 2: Sam saves 15% of her total earnings.
+
+"
+2hop_percentage_0018,error_verbalized,1,2,magnitude_error,,,,0.912109375,0.9796321942256048,0.01057028441368059,False,0,False,0,,False,False,False,False,180,13,"Sam saves 15% of $900.  
+"
+2hop_percentage_0036,clean,0,2,,,,,0.57763671875,0.9283315539360046,0.04421162376249102,False,0,False,0,,False,False,False,False,113,16,"Step 2: Karen saves 15% of her total earnings.  
+"
+2hop_percentage_0036,error_standard,1,2,wrong_operator,,,,0.8740234375,0.9764018991719121,0.012404791979055974,False,0,False,0,,False,False,False,False,113,23,"Step 2: Karen earns $10 per hour and works 4 hours, so her total earnings are:
+
+"
+2hop_percentage_0036,error_verbalized,1,2,wrong_operator,,,,0.96240234375,0.9907484901578802,0.0048864324488826745,False,0,False,0,,False,False,False,False,178,19,"Karen earns $10 per hour and works 4 hours, so her total earnings are:
+
+"
+4hop_multi_stage_allocation_0002,clean,0,4,,,,,0.896484375,0.9821732997894287,0.00931416396250686,False,0,False,0,,False,False,False,False,142,15,"After spending 20% on salaries, $800 remains.
+
+"
+4hop_multi_stage_allocation_0002,error_standard,1,4,wrong_unit,,,,0.90625,0.9649023626531873,0.018884563942004096,False,0,False,0,,False,False,False,False,141,14,"After spending 20% on salaries, the remaining budget is:
+
+"
+4hop_multi_stage_allocation_0002,error_verbalized,1,4,wrong_unit,,,,0.56982421875,0.8568847945758274,0.09043049153267753,False,0,False,0,,False,False,False,False,206,14,"After spending 20% on salaries, the remaining budget is:
+
+"
+2hop_rate_distance_0018,clean,0,2,,,,,0.57763671875,0.9379233164446694,0.04011145694445158,False,0,False,0,,False,False,False,False,107,14,"Step 2: Convert the travel time from hours to minutes.  
+"
+2hop_rate_distance_0018,error_standard,1,2,magnitude_error,,,,0.5546875,0.9334637182099479,0.04360613125899141,False,0,False,0,,False,False,False,False,109,14,"Step 2: Convert the travel time from hours to minutes.  
+
+"
+2hop_rate_distance_0018,error_verbalized,1,2,magnitude_error,,,,0.3828125,0.9401569491938541,0.05752511280274629,False,0,False,0,,False,False,False,False,174,19,"30 hours × 60 minutes/hour = 1800 minutes.  
+"
+3hop_compound_rate_0009,clean,0,3,,,,,0.5830078125,0.9449883018221173,0.03709251215712742,False,0,False,0,,False,False,False,False,149,21,"Answer: 30 ÷ 30 = 1 hour = 60 minutes.  
+"
+3hop_compound_rate_0009,error_standard,1,3,wrong_percentage_base,,,,0.7431640625,0.9584824669928778,0.023437299272842167,False,0,False,0,,False,False,False,False,144,21,"To find how many minutes the second leg (30 km at 30 km/h) takes:
+
+"
+3hop_compound_rate_0009,error_verbalized,1,3,wrong_percentage_base,,,,0.6298828125,0.9085631171862284,0.06457778356678348,False,0,False,0,,False,False,False,False,209,9,"To find how long the second leg takes:
+
+"
