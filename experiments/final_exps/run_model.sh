@@ -13,8 +13,9 @@
 
 # ── Models to run (format: "hf/repo:short_name", comment out to skip) ─
 MODELS=(
-    "Qwen/Qwen3-4B-Instruct-2507:qwen3_4b_instruct"
-    "Qwen/Qwen2.5-3B-Instruct:qwen25_3b_instruct"
+    "Qwen/Qwen3-4B:qwen3_4b_think"
+    # ""
+    # "Qwen/Qwen2.5-3B-Instruct:qwen25_3b_instruct"
     # "unsloth/Llama-3.2-3B-Instruct:llama32_3b_inst"
     # "unsloth/Llama-3.1-8B-Instruct:llama31_8b_inst"
     # "allenai/OLMo-20B-0824:olmo_20b"
@@ -22,7 +23,7 @@ MODELS=(
 
 source /data/datasets/.envs/safe_env/bin/activate
 
-SCRIPT="knowing_saying_gap.py"
+SCRIPT="knowing_saying_gap_think.py"
 DATASET="/data/b22ai063/.mech_interp/temporal-awareness/data/raw/extended_contrastive_math_dataset.json"
 
 # Sample sizes — tune down for larger models / less VRAM
