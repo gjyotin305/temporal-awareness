@@ -13,7 +13,8 @@
 
 # ── Models to run (format: "hf/repo:short_name", comment out to skip) ─
 MODELS=(
-    "Qwen/Qwen3-4B:qwen3_4b_think"
+    # "Qwen/Qwen3-4B:qwen3_4b_think"
+    "Qwen/Qwen3.5-27B:qwen35_27b_think"
     # ""
     # "Qwen/Qwen2.5-3B-Instruct:qwen25_3b_instruct"
     # "unsloth/Llama-3.2-3B-Instruct:llama32_3b_inst"

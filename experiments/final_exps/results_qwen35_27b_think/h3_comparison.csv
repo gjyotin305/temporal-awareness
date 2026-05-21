@@ -1,0 +1,4 @@
+signal,name,auroc_detection,auroc_failure
+logprob_uncertainty,Logprob Uncertainty,0.34511898323418067,0.5
+peak_entropy,Peak Entropy,0.3075310978907517,0.5
+mean_vocab_gap,Vocab Gap (mean),0.6460924824229313,0.5
